@@ -80,3 +80,4 @@ function game() {
     //if playerScore > computerScore display "You win x to y"
     //if playerScore < computerScore display "You lose x to y"
 }
+game();
