@@ -80,3 +80,10 @@ function isPangram(string){
 
 // Implement a function that adds two numbers together and returns their sum in binary.
 // The conversion can be done before, or after the addition.
+
+function addBinary(a,b) {
+    const sum =  a + b;
+    //if the number is ++ then you add a 1 in binary
+    
+}
+

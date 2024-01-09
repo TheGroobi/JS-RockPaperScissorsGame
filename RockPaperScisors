@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <script>
+        const computer = function() {
+            const compsChoiceNumber = Math.ceil((Math.random() * 3));
+            console.log(compsChoiceNumber)
+            if (compsChoiceNumber === 1) {
+                return 'paper';
+            } else if (compsChoiceNumber === 2) {
+                return 'rock';
+            } else if (compsChoiceNumber === 3) {
+                return 'scissors';
+            }
+        };
+            
+        function rockPaperScissors(player, computer) {
+            let winningText;
+            if (player == computer) {
+                winningText = 'Draw, try again';
+            } else if (player === 'rock' && computer === 'paper') {
+                winningText = 'You win, rock beats paper';
+            } else if (player === 'rock' && computer === 'scissors') {
+                winningText = 'You lose, scisors beat rock';
+            } else if (player === 'paper' && computer === 'scissors') {
+                winningText = 'You lose, scisors beat paper';
+            } else if (player === 'paper' && computer === 'rock') {
+                winningText = 'You win, paper beats rock';
+            } else if (player === 'scissors' && computer === 'rock') {
+                winningText = 'You lose, rock beats scissors';
+            } else if(player === 'scissors' && computer === 'paper')
+                winningText = 'You win, scissors beats paper';
+            return winningText;
+        }
+        function game() {
+            let input = prompt("Please enter your choice", 'Rock / Paper / Scissors');
+            let output;
+            let compScore = 0;
+            let playerScore = 0;
+
+            if (input.toLowerCase() === 'paper') { //ask for input and return value
+                output = 'paper';
+            } else if (input.toLowerCase() === 'rock') {
+                output = 'rock';
+            } else if (input.toLowerCase() === 'scissors') {
+                output = 'scissors';
+            } else {
+                output = `Invalid Input, try putting in "rock, paper or scissors"`
+            }
+            //loop the function "rockPaperScissors(player(input), computer())" 5 times
+            //if comp wins ++ to the scoreboard
+            //if player wins ++ to the scoreboard
+            //if playerScore > computerScore display "You win x to y"
+            //if playerScore < computerScore display "You lose x to y"
+            //if draw run again 
+        }
+        game();
+        </script>
+    </body>
+</html>
