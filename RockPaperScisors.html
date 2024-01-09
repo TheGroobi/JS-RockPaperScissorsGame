@@ -37,29 +37,35 @@
                 winningText = 'You win, scissors beats paper';
             return winningText;
         }
-        function game() {
-            let input = prompt("Please enter your choice", 'Rock / Paper / Scissors');
-            let output;
-            let compScore = 0;
-            let playerScore = 0;
-
-            if (input.toLowerCase() === 'paper') { //ask for input and return value
-                output = 'paper';
-            } else if (input.toLowerCase() === 'rock') {
-                output = 'rock';
-            } else if (input.toLowerCase() === 'scissors') {
-                output = 'scissors';
-            } else {
-                output = `Invalid Input, try putting in "rock, paper or scissors"`
+        
+            function game() {
+                let input = prompt("Please enter your choice", 'Rock / Paper / Scissors');
+                let output;
+                let compScore = 0;
+                let playerScore = 0;
+                while(true) {
+                    if (input.toLowerCase() === 'paper') { //ask for input and return value
+                        output = 'paper';
+                        break;
+                    } else if (input.toLowerCase() === 'rock') {
+                        output = 'rock';
+                        break;
+                    } else if (input.toLowerCase() === 'scissors') {
+                        output = 'scissors';
+                        break;
+                    } else {
+                        output = `Invalid Input, try putting in "rock, paper or scissors"`;
+                        input = prompt("Put in a valid value", 'Rock / Paper / Scissors');
+                    }
+                }
+                return output;
+                //loop the function "rockPaperScissors(player(input), computer())" 5 times
+                //if comp wins ++ to the scoreboard
+                //if player wins ++ to the scoreboard
+                //if playerScore > computerScore display "You win x to y"
+                //if playerScore < computerScore display "You lose x to y"
+                //if draw run again 
             }
-            //loop the function "rockPaperScissors(player(input), computer())" 5 times
-            //if comp wins ++ to the scoreboard
-            //if player wins ++ to the scoreboard
-            //if playerScore > computerScore display "You win x to y"
-            //if playerScore < computerScore display "You lose x to y"
-            //if draw run again 
-        }
-        game();
         </script>
     </body>
 </html>
