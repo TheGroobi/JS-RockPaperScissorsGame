@@ -9,7 +9,7 @@
         <script>
         const computer = function() {
             const compsChoiceNumber = Math.ceil((Math.random() * 3));
-            console.log(compsChoiceNumber)
+            // console.log(compsChoiceNumber)
             if (compsChoiceNumber === 1) {
                 return 'paper';
             } else if (compsChoiceNumber === 2) {
@@ -19,26 +19,28 @@
             }
         };
             
+        let winningText;
         function rockPaperScissors(player, computer) {
-            let winningText;
             if (player == computer) {
                 winningText = 'Draw, try again';
             } else if (player === 'rock' && computer === 'paper') {
-                winningText = 'You win, rock beats paper';
+                winningText = [true, 'You win, rock beats paper'];
             } else if (player === 'rock' && computer === 'scissors') {
-                winningText = 'You lose, scisors beat rock';
+                winningText = [false, 'You lose, scisors beat rock'];
             } else if (player === 'paper' && computer === 'scissors') {
-                winningText = 'You lose, scisors beat paper';
+                winningText = [false, 'You lose, scisors beat paper'];
             } else if (player === 'paper' && computer === 'rock') {
-                winningText = 'You win, paper beats rock';
+                winningText = [true, 'You win, paper beats rock'];
             } else if (player === 'scissors' && computer === 'rock') {
-                winningText = 'You lose, rock beats scissors';
-            } else if(player === 'scissors' && computer === 'paper')
-                winningText = 'You win, scissors beats paper';
-            return winningText;
+                winningText = [false, 'You lose, rock beats scissors'];
+            } else if(player === 'scissors' && computer === 'paper') {
+                winningText = [true, 'You win, scissors beats paper'];
+                return winningText;
+            }
+        console.log(winningText);
         }
         
-            function game() {
+        function game() {
                 let input = prompt("Please enter your choice", 'Rock / Paper / Scissors');
                 let output;
                 let compScore = 0;
@@ -58,13 +60,26 @@
                         input = prompt("Put in a valid value", 'Rock / Paper / Scissors');
                     }
                 }
-                return output;
+                loopGame5: for (; playerScore < 3 && compScore < 3;) {
+                    rockPaperScissors(output, computer())
+                    if(winningText.includes(true)) {
+                        playerScore++;
+                        input;
+                    } else if (winningText.includes(false)) {
+                        compScore++;
+                        input;
+                    } else {
+                        continue loopGame5;
+                    }
+                console.log(playerScore, compScore);
+                
                 //loop the function "rockPaperScissors(player(input), computer())" 5 times
                 //if comp wins ++ to the scoreboard
                 //if player wins ++ to the scoreboard
                 //if playerScore > computerScore display "You win x to y"
                 //if playerScore < computerScore display "You lose x to y"
                 //if draw run again 
+                }
             }
         </script>
     </body>
