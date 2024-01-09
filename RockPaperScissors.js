@@ -15,19 +15,19 @@ function rockPaperScissors(player, computer) {
     if (player == computer) {
         winningTextArray = ['Draw, try again'];
     } else if (player === 'rock' && computer === 'paper') {
-        winningTextArray = [true, 'You win, rock beats paper'];
+        winningTextArray = ['You win, rock beats paper', true];
     } else if (player === 'rock' && computer === 'scissors') {
-        winningTextArray = [false, 'You lose, scisors beat rock'];
+        winningTextArray = ['You lose, scisors beat rock', false];
     } else if (player === 'paper' && computer === 'scissors') {
-        winningTextArray = [false, 'You lose, scisors beat paper'];
+        winningTextArray = ['You lose, scisors beat paper', false];
     } else if (player === 'paper' && computer === 'rock') {
-        winningTextArray = [true, 'You win, paper beats rock'];
+        winningTextArray = ['You win, paper beats rock', true];
     } else if (player === 'scissors' && computer === 'rock') {
-        winningTextArray = [false, 'You lose, rock beats scissors'];
+        winningTextArray = ['You lose, rock beats scissors', false];
     } else if(player === 'scissors' && computer === 'paper') {
-        winningTextArray = [true, 'You win, scissors beats paper'];
+        winningTextArray = ['You win, scissors beats paper'], true;
     }
-    console.log(winningTextArray);
+    console.log(winningTextArray[0]);
     return winningTextArray;
 }
 
