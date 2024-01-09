@@ -1,6 +1,6 @@
+
 const computer = function() {
     const compsChoiceNumber = Math.ceil((Math.random() * 3));
-    // console.log(compsChoiceNumber)
     if (compsChoiceNumber === 1) {
         return 'paper';
     } else if (compsChoiceNumber === 2) {
@@ -13,7 +13,7 @@ const computer = function() {
 let winningTextArray;
 function rockPaperScissors(player, computer) {
     if (player == computer) {
-        winningTextArray = 'Draw, try again';
+        winningTextArray = ['Draw, try again'];
     } else if (player === 'rock' && computer === 'paper') {
         winningTextArray = [true, 'You win, rock beats paper'];
     } else if (player === 'rock' && computer === 'scissors') {
@@ -26,9 +26,9 @@ function rockPaperScissors(player, computer) {
         winningTextArray = [false, 'You lose, rock beats scissors'];
     } else if(player === 'scissors' && computer === 'paper') {
         winningTextArray = [true, 'You win, scissors beats paper'];
-        return winningTextArray;
     }
-console.log(winningTextArray);
+    console.log(winningTextArray);
+    return winningTextArray;
 }
 
 function game() {
@@ -36,7 +36,6 @@ function game() {
     let output;
     let compScore = 0;
     let playerScore = 0;
-    let alert;
     while(true) {
         if (input.toLowerCase() === 'paper') { //ask for input and return value
             output = 'paper';
@@ -72,12 +71,12 @@ function game() {
     if(playerScore > compScore) {
         winningText = `You win ${playerScore} to ${compScore}`;
     } else {
-        winningText = `You lose ${compScore} to ${playerScore} for the computer`;
+        winningText = `You lose ${compScore} to ${playerScore} to the computer`;
     }
-    document.body.innerHTML = `
-    <h2>${winningText}</h2>
-    `;
+    document.body.innerHTML = `<h2>${winningText}</h2>`;
     //if playerScore > computerScore display "You win x to y"
     //if playerScore < computerScore display "You lose x to y"
 }
-game();
+
+const button = document.querySelector('button');
+button.addEventListener('click', game, {once: true});

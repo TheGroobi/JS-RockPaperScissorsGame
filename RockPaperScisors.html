@@ -4,8 +4,58 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rock Paper Scissors</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                min-height: 100svh;
+                overflow: hidden;
+                background-color: rgb(224, 224, 224);
+                font-family: 'Lato', sans-serif;
+            }
+            button {
+                font-size: 2em;
+                text-decoration: none;
+                padding: 1.5em;
+                border-radius: 30px;
+                border: none;
+                background-color: rgb(129, 51, 255);
+                box-shadow: 0 0 20px rgb(63, 0, 99);
+                text-align: center;
+            }
+            
+            button:hover {
+                background-color: rgba(129, 51, 255, 0.959);
+                color: rgba(255, 255, 255, 0.911);
+                border-radius: 40px;
+                transition: all 0.15s ease-in-out;
+            }
+            
+            button:active {
+                transition: all 0.1s ease-out;
+                background-color: rgb(166, 111, 255);
+                padding: 2.5em;
+                border-radius: 50px;
+            }
+            
+            h2 {
+                padding-bottom: 3em;
+                font-size: 1.5em;
+            }
+            h1 {
+                font-size: 3em;
+            }
+            </style>
     </head>
     <body>
-        <script src="./RockPaperScissors.js"></script>
+        <h1>Rock Paper Scissors</h1>
+        <h2>Play a quick game of 5 </h2>
+        <button type="button">Play Game</button>
+    <script src="./RockPaperScissors.js"></script>
     </body>
-</html>
+    </html>
